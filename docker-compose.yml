@@ -9,13 +9,11 @@ services:
     tty: true
     environment:
       clasp_config_auth: /root/clasp/.clasprc.json
+      SCRIPT_ID: ${SCRIPT_ID}
     volumes:
       - .:/usr/src
       - clasp_data:/root/clasp
       - modules_data:/usr/src/node_modules
-    ports:
-      - "8081:8081"
-      - "37763:37763"
     working_dir: /usr/src
 
 volumes:

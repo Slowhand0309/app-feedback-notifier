@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "prepare": "sed \"s/<SCRIPT_ID>/${SCRIPT_ID}/g\" < .clasp.json.template > .clasp.json"
+  },
   "devDependencies": {
     "@types/google-apps-script": "^1.0.78"
   }
