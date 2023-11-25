@@ -1,0 +1,25 @@
+{
+  "name": "Remote vscode dev",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/usr/src",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "yoavbls.pretty-ts-errors"
+      ],
+      "settings": {
+        "editor.tabSize": 2,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  },
+  "shutdownAction": "none"
+}

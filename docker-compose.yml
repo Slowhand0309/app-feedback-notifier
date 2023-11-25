@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    image: slowhand/app-feedback-notifier
+    container_name: "app-feedback-notifier"
+    command: bash -c "yarn install && tail -f /dev/null"
+    tty: true
+    environment:
+      clasp_config_auth: /root/clasp/.clasprc.json
+    volumes:
+      - .:/usr/src
+      - clasp_data:/root/clasp
+      - modules_data:/usr/src/node_modules
+    ports:
+      - "8081:8081"
+      - "37763:37763"
+    working_dir: /usr/src
+
+volumes:
+  clasp_data:
+  modules_data:

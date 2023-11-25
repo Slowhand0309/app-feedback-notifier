@@ -1,0 +1,9 @@
+{
+  "name": "app-feedback-notifier",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.78"
+  }
+}
