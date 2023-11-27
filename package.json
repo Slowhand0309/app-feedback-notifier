@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "deploy": "yarn prepare && clasp push -f",
     "prepare": "sed \"s/<SCRIPT_ID>/${SCRIPT_ID}/g\" < .clasp.json.template > .clasp.json"
   },
   "devDependencies": {
