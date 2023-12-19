@@ -4,10 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "clasp:login": "clasp login",
+    "projects": "clasp list",
     "deploy": "yarn prepare && clasp push -f",
     "prepare": "sed \"s/<SCRIPT_ID>/${SCRIPT_ID}/g\" < .clasp.json.template > .clasp.json"
   },
   "devDependencies": {
+    "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.78"
   }
 }
