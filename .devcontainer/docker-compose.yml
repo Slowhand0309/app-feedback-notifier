@@ -8,11 +8,11 @@ services:
     command: bash -c "tail -f /dev/null"
     tty: true
     environment:
-      clasp_config_auth: /root/clasp/.clasprc.json
+      clasp_config_auth: /home/vscode/clasp/.clasprc.json
       SCRIPT_ID: ${SCRIPT_ID}
     volumes:
       - ..:/usr/src
-      - clasp_data:/root/clasp
+      - clasp_data:/home/vscode/clasp
       - modules_data:/usr/src/node_modules
     working_dir: /usr/src
     user: vscode

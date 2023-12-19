@@ -13,3 +13,16 @@ Feedback notifications for apps.
 clasp login
 ```
 Access the URL displayed to authenticate the clasp.
+
+```sh
+docker exec -it app-feedback-notifier curl "http://localhost:43031/?code=..."
+```
+Accessing callback URLs from within containers.
+
+## Shutdown
+
+```sh
+docker compose -p app-feedback-notifier_devcontainer -f .devcontainer/docker-compose.yml down
+```
+
+Stop by specifying the project name and file.

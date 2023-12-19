@@ -10,12 +10,11 @@ RUN set -ex \
     && apt-get install -y \
         git \
         sudo \
+        curl \
         --no-install-recommends \
     && groupadd --gid ${usergid} ${username} \
     && useradd -s /bin/bash --uid ${useruid} --gid ${usergid} -m ${username} \
     && echo ${username} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${username} \
     && chmod 0440 /etc/sudoers.d/${username}
-
-RUN yarn global add @google/clasp
 
 USER ${username}
