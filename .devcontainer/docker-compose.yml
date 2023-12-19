@@ -3,18 +3,19 @@ version: "3.8"
 services:
   app:
     build: .
-    image: slowhand/app-feedback-notifier
+    image: app-feedback-notifier
     container_name: "app-feedback-notifier"
-    command: bash -c "yarn install && tail -f /dev/null"
+    command: bash -c "tail -f /dev/null"
     tty: true
     environment:
       clasp_config_auth: /root/clasp/.clasprc.json
       SCRIPT_ID: ${SCRIPT_ID}
     volumes:
-      - .:/usr/src
+      - ..:/usr/src
       - clasp_data:/root/clasp
       - modules_data:/usr/src/node_modules
     working_dir: /usr/src
+    user: vscode
 
 volumes:
   clasp_data:
